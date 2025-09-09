@@ -1,8 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-farm-to-shelf.jpg";
+import { useState } from "react";
+import CertificationForm from "./CertificationForm";
 
 const Hero = () => {
+  const [showCertificationForm, setShowCertificationForm] = useState(false);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -30,6 +41,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Button 
               size="lg" 
+              onClick={() => setShowCertificationForm(true)}
               className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-8 py-4 rounded-full shadow-medium transition-all duration-300 hover:shadow-gold hover:scale-105"
             >
               Get Certified
@@ -39,6 +51,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={scrollToContact}
               className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-semibold px-8 py-4 rounded-full backdrop-blur-sm transition-all duration-300"
             >
               <Play className="mr-2 h-5 w-5" />
@@ -47,6 +60,12 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Certification Form Modal */}
+      <CertificationForm 
+        isOpen={showCertificationForm} 
+        onClose={() => setShowCertificationForm(false)} 
+      />
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

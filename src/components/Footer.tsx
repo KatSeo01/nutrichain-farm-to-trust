@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4 text-background/70">
               <Mail className="h-5 w-5" />
-              <span>hello@nutrichain.africa</span>
+              <span>info@nutrichain.co.za</span>
             </div>
           </div>
 

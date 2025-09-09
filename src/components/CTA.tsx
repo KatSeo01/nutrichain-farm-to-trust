@@ -1,7 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users } from "lucide-react";
+import { useState } from "react";
+import CertificationForm from "./CertificationForm";
 
 const CTA = () => {
+  const [showCertificationForm, setShowCertificationForm] = useState(false);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-hero relative overflow-hidden">
       {/* Background Pattern */}
@@ -24,6 +35,7 @@ const CTA = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
             <Button 
               size="lg" 
+              onClick={() => setShowCertificationForm(true)}
               className="bg-white text-primary hover:bg-white/90 font-semibold px-10 py-4 rounded-full shadow-gold transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
               Get Certified Today
@@ -33,6 +45,7 @@ const CTA = () => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={scrollToContact}
               className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-semibold px-10 py-4 rounded-full backdrop-blur-sm transition-all duration-300"
             >
               <Users className="mr-2 h-5 w-5" />
@@ -56,6 +69,12 @@ const CTA = () => {
           </div>
         </div>
       </div>
+
+      {/* Certification Form Modal */}
+      <CertificationForm 
+        isOpen={showCertificationForm} 
+        onClose={() => setShowCertificationForm(false)} 
+      />
     </section>
   );
 };
