@@ -41,12 +41,6 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-6 rounded-full transition-all duration-300"
-            >
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,12 +68,6 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-6 rounded-full transition-all duration-300 w-full"
-              >
-                Get Started
-              </Button>
             </div>
           </div>
         )}
