@@ -26,7 +26,7 @@ const Impact = () => {
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section id="impact" className="py-20 bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

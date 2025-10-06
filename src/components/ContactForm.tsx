@@ -17,8 +17,8 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Demo Request Submitted!",
-      description: "Thank you for your interest. We'll contact you within 24 hours.",
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
     setFormData({ name: "", email: "", company: "", message: "" });
   };
@@ -36,10 +36,10 @@ const ContactForm = () => {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Request a <span className="text-primary">Demo</span>
+              Contact <span className="text-primary">Us</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Discover how NutriChain can transform your supply chain with blockchain-powered trust and transparency.
+              Get in touch with us to learn how NutriChain can transform your supply chain with blockchain-powered trust and transparency.
             </p>
           </div>
 
@@ -113,7 +113,7 @@ const ContactForm = () => {
                 className="w-full bg-gradient-primary hover:bg-primary-glow text-primary-foreground font-semibold py-3 rounded-lg shadow-soft transition-all duration-300 hover:shadow-medium hover:scale-[1.02]"
               >
                 <Send className="mr-2 h-5 w-5" />
-                Send Demo Request
+                Send
               </Button>
             </form>
           </div>
